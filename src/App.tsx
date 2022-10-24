@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 
 import './App.css';
+import Cv from './Cv';
 import Education from './Education';
 import GeneralInfo from './GeneralInfo';
 import Skills from './Skills';
@@ -23,6 +24,7 @@ function App() {
           <Route path='/workexperience' element={<WorkExperience />} />
           <Route path='/education' element={<Education />} />
           <Route path='/skills' element={<Skills />} />
+          <Route path='/cv' element={<Cv />} />
         </Routes>
       </BrowserRouter>
     </div>
