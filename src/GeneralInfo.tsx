@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { nanoid } from "nanoid";
 
+
 const GeneralInfo: React.FC = () => {
   const [firstName, setFirstName] = useState<string>('')
   const [lastName, setLastName] = useState<string>('')
@@ -14,16 +15,16 @@ const GeneralInfo: React.FC = () => {
   const handleSubmit = (e: any) => {
     e.preventDefault()
     if(firstName && lastName && placeOfResidence && sumarry){
-      const info = {id: nanoid(), firstName, lastName, placeOfResidence, sumarry }
+      const inputInfo = {id: nanoid(), firstName, lastName, placeOfResidence, sumarry }
       setGeneralInfo((generalInfo: any) => {
-       return [...generalInfo, info]
+       return [...generalInfo, inputInfo]
       })
       setFirstName('')
       setLastName('')
       setPlaceOfResidence('')
       setSumarry('')
     }
-    console.log(firstName, lastName, placeOfResidence, sumarry)
+ 
     navigate('/workexperience')
   }
   return ( 
@@ -59,6 +60,7 @@ const GeneralInfo: React.FC = () => {
           </form>
         </article>
       </div>
+     
     </div>
     
    );
