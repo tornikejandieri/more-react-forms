@@ -9,11 +9,10 @@ import {
 import './App.css';
 import Cv from './Cv';
 import Education from './Education';
-import GeneralInfo from './GeneralInfo';
 import InputParent from './InputParent';
 import Skills from './Skills';
 import Welcome from './Welcome';
-import WorkExperience from './WorkExperience';
+import WorkExperienceParent from './WorkExperienceParent';
 
 function App() {
   return (
@@ -22,7 +21,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Welcome />} />
           <Route path='/inputparentgeneralinformation' element={<InputParent />} />
-          <Route path='/workexperience' element={<WorkExperience />} />
+          <Route path='/inputparentworkexperience' element={<WorkExperienceParent />} />  
           <Route path='/education' element={<Education />} />
           <Route path='/skills' element={<Skills />} />
           <Route path='/cv' element={<Cv />} />

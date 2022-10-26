@@ -1,33 +1,19 @@
-import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { nanoid } from 'nanoid'
+interface Props {
+  positionName: string,
+  companyName: string,
+  location: string,
+  fromTo: string,
+  jobDescription: string,
+  handleSubmit: (params: any) => any,
+  onChangePosition: (params: any) => any,
+  onChangeCompanyName: (params: any) => any,
+  onChangeLocation: (params: any) => any,
+  onChangeFromTo: (params: any) => any,
+  onChangeJobDescription: (params: any) => any
+}
 
-const WorkExperience: React.FC = () => {
-  const [positionName, setPositionName] = useState<string>('')
-  const [companyName, setCompanyName] = useState<string>('')
-  const [location, setLocation] = useState<string>('')
-  const [fromTo, setFromTo] = useState<string>('')
-  const [jobDescription, setJobDescription] = useState<string>('')
-  const [workInfo, setWorkInfo] = useState<any>([])
-
-  const navigate = useNavigate()
-
-  const handleSubmit = (e: any) => {
-    e.preventDefault()
-    if(positionName && companyName && location && fromTo && jobDescription){
-      const inputInfo = {id: nanoid(), positionName, companyName, location, fromTo, jobDescription}
-      setWorkInfo((workInfo: any) => {
-        return [...workInfo, inputInfo]
-      })
-      setPositionName('')
-      setCompanyName('')
-      setLocation('')
-      setFromTo('')
-      setJobDescription('')
-    }
-  
-    navigate('/education')
-  }
+const WorkExperience: React.FC<Props> = ({positionName, companyName, location, fromTo, jobDescription, handleSubmit, onChangePosition, onChangeCompanyName, onChangeFromTo, onChangeJobDescription, onChangeLocation}) => {
+ 
   return ( 
     <div className="work-experience">
       <div>
@@ -38,19 +24,19 @@ const WorkExperience: React.FC = () => {
           <form className="form-control" onSubmit={handleSubmit}>
             <div>
               <label htmlFor="positionName">Position Name </label>
-              <input type="text" id="positionName" value={positionName} onChange={(e: any) => setPositionName(e.target.value)} />
+              <input type="text" id="positionName" value={positionName} onChange={onChangePosition} />
             </div>
             <div>
               <label htmlFor="companyName">Company Name </label>
-              <input type="text" id="companyName" value={companyName} onChange={(e: any) => setCompanyName(e.target.value)} />
+              <input type="text" id="companyName" value={companyName} onChange={onChangeCompanyName} />
             </div>
             <div>
               <label htmlFor="location">Location </label>
-              <input type="text" id="location" value={location} onChange={(e: any) => setLocation(e.target.value)} />
+              <input type="text" id="location" value={location} onChange={onChangeLocation} />
             </div>
             <div>
               <label htmlFor="fromTo">From-To </label>
-              <input type="text" id="fromTo" value={fromTo} onChange={(e: any) => setFromTo(e.target.value)} />
+              <input type="text" id="fromTo" value={fromTo} onChange={onChangeFromTo} />
             </div>
            
             <div>
@@ -59,7 +45,7 @@ const WorkExperience: React.FC = () => {
               id="description"
               placeholder="shortly describe what were your responsibilities and tasks"
               value={jobDescription}
-              onChange={(e: any) => setJobDescription(e.target.value)}
+              onChange={onChangeJobDescription}
               />
             </div>
             <button type="submit">Save</button>

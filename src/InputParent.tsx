@@ -37,9 +37,9 @@ const InputParent: React.FC = () => {
       setSumarry('')
     }
     console.log(firstName, lastName, placeOfResidence, sumarry)
-    navigate('/workexperience')
+    navigate('/inputparentworkexperience')
   }
-  
+
   return ( 
     <div className="input-parent">
       <GeneralInfo 
