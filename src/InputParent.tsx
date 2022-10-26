@@ -39,6 +39,7 @@ const InputParent: React.FC = () => {
     console.log(firstName, lastName, placeOfResidence, sumarry)
     navigate('/workexperience')
   }
+  
   return ( 
     <div className="input-parent">
       <GeneralInfo 
@@ -46,7 +47,6 @@ const InputParent: React.FC = () => {
       lastName={lastName} 
       placeOfResidence={placeOfResidence}
       sumarry={sumarry}
-      generalInfo={generalInfo}
       handleSubmit={handleSubmit}
       onChangeName={onChangeName}
       onChangeLastName={onChangeLastName}

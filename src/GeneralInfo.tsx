@@ -5,7 +5,6 @@ interface Props {
   lastName: string,
   placeOfResidence: string,
   sumarry: string,
-  generalInfo: any,
   handleSubmit: (params: any) => any,
   onChangeName: (params: any) => any,
   onChangeLastName: (params: any) => any,
@@ -13,7 +12,7 @@ interface Props {
   onChangeSumarry: (params: any) => any
 }
 
-const GeneralInfo: React.FC<Props> = ({firstName, lastName, placeOfResidence, sumarry, generalInfo, handleSubmit, onChangeName, onChangeLastName, onChangePlace, onChangeSumarry}) => {
+const GeneralInfo: React.FC<Props> = ({firstName, lastName, placeOfResidence, sumarry, handleSubmit, onChangeName, onChangeLastName, onChangePlace, onChangeSumarry}) => {
 
 
 

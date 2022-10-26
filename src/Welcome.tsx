@@ -7,7 +7,7 @@ const Welcome: React.FC = () => {
         <h1>Welcome to online CV maker</h1>
       </div>
       <div>
-        <Link to={'/generalinfo'}>Start Creating Resume</Link>
+        <Link to={'/inputparentgeneralinformation'}>Start Creating Your Resume</Link>
       </div>
     </div>
    );
