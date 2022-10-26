@@ -9,6 +9,8 @@ const InputParent: React.FC = () => {
   const [placeOfResidence, setPlaceOfResidence] = useState<string>('')
   const [sumarry, setSumarry] = useState<string>('')
   const [generalInfo, setGeneralInfo] = useState<any>([])
+  const [isFilled, setIsFilled] = useState<boolean>(false)
+
   const navigate = useNavigate()
 
   const onChangeName = (e: any) => {
@@ -35,9 +37,10 @@ const InputParent: React.FC = () => {
       setLastName('')
       setPlaceOfResidence('')
       setSumarry('')
+      setIsFilled(true)
     }
     console.log(firstName, lastName, placeOfResidence, sumarry)
-    navigate('/inputparentworkexperience')
+    // navigate('/inputparentworkexperience')
   }
 
   return ( 
@@ -47,11 +50,14 @@ const InputParent: React.FC = () => {
       lastName={lastName} 
       placeOfResidence={placeOfResidence}
       sumarry={sumarry}
+      generalInfo={generalInfo}
       handleSubmit={handleSubmit}
       onChangeName={onChangeName}
       onChangeLastName={onChangeLastName}
       onChangePlace={onChangePlace}
-      onChangeSumarry={onChangeSumarry} />
+      onChangeSumarry={onChangeSumarry}
+      isFilled={isFilled}
+       />
     </div>
    );
 }

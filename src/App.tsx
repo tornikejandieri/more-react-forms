@@ -12,7 +12,7 @@ import Education from './Education';
 import InputParent from './InputParent';
 import Skills from './Skills';
 import Welcome from './Welcome';
-import WorkExperienceParent from './WorkExperienceParent';
+
 
 function App() {
   return (
@@ -20,10 +20,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<Welcome />} />
-          <Route path='/inputparentgeneralinformation' element={<InputParent />} />
-          <Route path='/inputparentworkexperience' element={<WorkExperienceParent />} />  
-          <Route path='/education' element={<Education />} />
-          <Route path='/skills' element={<Skills />} />
+          <Route path='/inputparent' element={<InputParent />} /> 
           <Route path='/cv' element={<Cv />} />
         </Routes>
       </BrowserRouter>
