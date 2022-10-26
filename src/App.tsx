@@ -10,6 +10,7 @@ import './App.css';
 import Cv from './Cv';
 import Education from './Education';
 import GeneralInfo from './GeneralInfo';
+import InputParent from './InputParent';
 import Skills from './Skills';
 import Welcome from './Welcome';
 import WorkExperience from './WorkExperience';
@@ -20,7 +21,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<Welcome />} />
-          <Route path='/generalinfo' element={<GeneralInfo />} />
+          <Route path='/inputparentgeneralinformation' element={<InputParent />} />
           <Route path='/workexperience' element={<WorkExperience />} />
           <Route path='/education' element={<Education />} />
           <Route path='/skills' element={<Skills />} />
